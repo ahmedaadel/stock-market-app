@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "296612228429",
+    "project_id": "borsetak-7661d",
+    "storage_bucket": "borsetak-7661d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:296612228429:android:9cd0f81b7cbb3598351b04",
+        "android_client_info": {
+          "package_name": "com.Dawly.borsetak"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "296612228429-im5ahrm7hi9nneqcm7dvioca9r4408o7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDeTkbLSQ_X7o3Z86Oe8n0W87XN8hdNUvo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "296612228429-im5ahrm7hi9nneqcm7dvioca9r4408o7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
