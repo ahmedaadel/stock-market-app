@@ -1,8 +1,7 @@
 // ignore_for_file: prefer_const_constructors
-import 'package:borsetak/Layout/Home_Layout.dart';
+import 'package:borsetak/Layout/Home_Layout.dart' ;
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:text_divider/text_divider.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -14,17 +13,15 @@ class LoginScreen extends StatefulWidget {
 
 class _MyAppState extends State<LoginScreen> {
   var username = TextEditingController();
-  var emailctr = TextEditingController();
-  var passctr = TextEditingController();
-  var signemailctr = TextEditingController();
-  var signpassctr = TextEditingController();
-  var signpassctr2 = TextEditingController();
-  var formkey = GlobalKey<FormState>();
-  var formkey2 = GlobalKey<FormState>();
-  var scaffoldkey = GlobalKey<ScaffoldState>();
-  bool isscure = true;
-  bool isscure2 = true;
-  int mycolor = Colors.grey[200]!.value;
+  var emailCtr = TextEditingController();
+  var passCtr = TextEditingController();
+  var signEmailCtr = TextEditingController();
+  var signPassCtr = TextEditingController();
+  var signPassCtr2 = TextEditingController();
+  var formKey = GlobalKey<FormState>();
+  var formKey2 = GlobalKey<FormState>();
+  var scaffoldKey = GlobalKey<ScaffoldState>();
+  bool isSecure = true;
 
   static Future<User?> signIn(
       {required String email,
@@ -54,11 +51,11 @@ class _MyAppState extends State<LoginScreen> {
         catch(error){print(error.toString());}
 
   }
-  Widget signsheet(context) {
+  Widget signSheet(context) {
     return Padding(
       padding: EdgeInsets.only(left: 10, bottom: 6, right: 10, top: 19),
       child: Form(
-        key: formkey2,
+        key: formKey2,
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -90,7 +87,7 @@ class _MyAppState extends State<LoginScreen> {
                   }
                   return null;
                 },
-                controller: signemailctr,
+                controller: signEmailCtr,
                 keyboardType: TextInputType.visiblePassword,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
@@ -109,7 +106,7 @@ class _MyAppState extends State<LoginScreen> {
                   }
                   return null;
                 },
-                controller: signpassctr,
+                controller: signPassCtr,
                 keyboardType: TextInputType.visiblePassword,
                 obscureText: true,
                 decoration: InputDecoration(
@@ -127,14 +124,14 @@ class _MyAppState extends State<LoginScreen> {
                   if (value!.isEmpty) {
                     return 'password can not be empty';
                   }
-                  if (signpassctr.text != signpassctr2.text) {
+                  if (signPassCtr.text != signPassCtr2.text) {
                     return 'You must write the same password twice';
                   }
-                  if (signpassctr.text == signpassctr2.text) {
+                  if (signPassCtr.text == signPassCtr2.text) {
                     return null;
                   }
                 },
-                controller: signpassctr2,
+                controller: signPassCtr2,
                 keyboardType: TextInputType.visiblePassword,
                 obscureText: true,
                 decoration: InputDecoration(
@@ -148,8 +145,8 @@ class _MyAppState extends State<LoginScreen> {
               padding: EdgeInsets.only(left: 8, right: 8, top: 8),
               child: ElevatedButton(
                 onPressed: () {
-                  if (formkey2.currentState!.validate()) {
-                    signUp(email: signemailctr.text, password: signpassctr.text);
+                  if (formKey2.currentState!.validate()) {
+                    signUp(email: signEmailCtr.text, password: signPassCtr.text);
                     Navigator.of(context).pop();
                   }
                 },
@@ -170,7 +167,7 @@ class _MyAppState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      key: scaffoldkey,
+      key: scaffoldKey,
       body: SafeArea(
         child: Container(
           alignment: Alignment.center,
@@ -188,7 +185,7 @@ class _MyAppState extends State<LoginScreen> {
               child: Padding(
                 padding: EdgeInsets.all(21),
                 child: Form(
-                  key: formkey,
+                  key: formKey,
                   child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
@@ -219,7 +216,7 @@ class _MyAppState extends State<LoginScreen> {
                             }
                             return null;
                           },
-                          controller: emailctr,
+                          controller: emailCtr,
                           keyboardType: TextInputType.emailAddress,
                           decoration: InputDecoration(
                             border: OutlineInputBorder(
@@ -240,9 +237,9 @@ class _MyAppState extends State<LoginScreen> {
                             }
                             return null;
                           },
-                          controller: passctr,
+                          controller: passCtr,
                           keyboardType: TextInputType.visiblePassword,
-                          obscureText: isscure,
+                          obscureText: isSecure,
                           decoration: InputDecoration(
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(15),
@@ -255,10 +252,10 @@ class _MyAppState extends State<LoginScreen> {
                             suffixIcon: IconButton(
                                 onPressed: () {
                                   setState(() {
-                                    isscure = !isscure;
+                                    isSecure = !isSecure;
                                   });
                                 },
-                                icon: isscure
+                                icon: isSecure
                                     ? Icon(
                                         Icons.visibility_sharp,
                                         color: Colors.black87,
@@ -272,10 +269,10 @@ class _MyAppState extends State<LoginScreen> {
                         ),
                         ElevatedButton(
                           onPressed: () async {
-                            if (formkey.currentState!.validate()) {
+                            if (formKey.currentState!.validate()) {
                               User? user = await signIn(
-                                  email: emailctr.text,
-                                  password: passctr.text,
+                                  email: emailCtr.text,
+                                  password: passCtr.text,
                                   context: context);
                               if (user != null) {
                                 Navigator.of(context).pushReplacement(MaterialPageRoute(
@@ -317,7 +314,7 @@ class _MyAppState extends State<LoginScreen> {
                                       isScrollControlled: true,
                                       backgroundColor: Colors.grey[200],
                                       context: context,
-                                      builder: signsheet,
+                                      builder: signSheet,
                                       shape: RoundedRectangleBorder(
                                           borderRadius: BorderRadius.vertical(
                                               top: Radius.circular(10))));
