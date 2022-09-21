@@ -308,16 +308,7 @@ class _MyAppState extends State<LoginScreen> {
                                     fontWeight: FontWeight.bold)),
                             TextButton(
                                 onPressed: () {
-                                  showModalBottomSheet(
-                                    enableDrag: false,
-                                      isDismissible: false,
-                                      isScrollControlled: true,
-                                      backgroundColor: Colors.grey[200],
-                                      context: context,
-                                      builder: signSheet,
-                                      shape: RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.vertical(
-                                              top: Radius.circular(10))));
+                                  scaffoldKey.currentState!.showBottomSheet((context) => signSheet(context));
                                 },
                                 child: Text(
                                   'Sign up',
@@ -337,3 +328,7 @@ class _MyAppState extends State<LoginScreen> {
     );
   }
 }
+//
+// shape: RoundedRectangleBorder(
+// borderRadius: BorderRadius.vertical(
+// top: Radius.circular(10))));
