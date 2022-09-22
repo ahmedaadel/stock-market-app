@@ -22,9 +22,9 @@ class MyApp extends StatelessWidget {
   }
   @override
   Widget build(BuildContext contex) {
-    return  MaterialApp (
+      return  MaterialApp (
+    theme: ThemeData(
 
-      theme: ThemeData(
  scaffoldBackgroundColor: Colors.white,
         appBarTheme:const AppBarTheme(
           actionsIconTheme: IconThemeData(color: Colors.black87),
