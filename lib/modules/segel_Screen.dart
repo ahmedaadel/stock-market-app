@@ -1,4 +1,4 @@
-import 'package:borsetak/components/constants.dart';
+import 'package:borsetak/Shared/components/constants.dart';
 import 'package:flutter/material.dart';
 
 class SegelScreen extends StatefulWidget {
@@ -11,7 +11,7 @@ class SegelScreen extends StatefulWidget {
 class _SegelScreenState extends State<SegelScreen> {
   @override
   Widget build(BuildContext context) {
-    // double screenWidth = MediaQuery.of(context).size.width;
+    double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
@@ -24,6 +24,12 @@ class _SegelScreenState extends State<SegelScreen> {
           IconButton(
               onPressed: () {}, icon: const Icon(Icons.snapchat, size: 35))
         ],
+        leading: IconButton(
+            icon: const Icon(
+              Icons.menu,
+              size: 30,
+            ),
+            onPressed: () {}),
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
@@ -38,13 +44,8 @@ class _SegelScreenState extends State<SegelScreen> {
             const SizedBox(
               height: 10,
             ),
-             Padding(
-               padding: const EdgeInsets.symmetric(horizontal: 20),
-               child: Row(
-                   children: const [ Expanded(child: SizedBox()), Text('من خلال التوصيات',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),],
-            ),
-             ),
+            const Text('من خلال التوصيات',
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
             Container(
               width: double.infinity,
               height: screenHeight / 5,
@@ -54,19 +55,15 @@ class _SegelScreenState extends State<SegelScreen> {
                 color: Colors.black54,
                 child: Row(
                   children: [
-                    const Expanded(
-                      child: CircleAvatar(
-                        radius: 40,
-                        backgroundColor: defaultColor,
-                        child: Text('SAR',
-                            style: TextStyle(
-                                fontSize: 20,
-                                color: Colors.white,
-                                fontWeight: FontWeight.w600)),
-                      ),
-                    ),
                     const SizedBox(
-                      width: 15,
+                      width: 30,
+                    ),
+                    const Expanded(
+                      child: Text('+18 %',
+                          style: TextStyle(
+                              fontSize: 20,
+                              color: Colors.green,
+                              fontWeight: FontWeight.w600)),
                     ),
                     Expanded(
                       child: Column(
@@ -91,14 +88,18 @@ class _SegelScreenState extends State<SegelScreen> {
                       ),
                     ),
                     const SizedBox(
-                      width: 15,
+                      width: 30,
                     ),
                     const Expanded(
-                      child: Text('+18 %',
-                          style: TextStyle(
-                              fontSize: 20,
-                              color: Colors.green,
-                              fontWeight: FontWeight.w600)),
+                      child: CircleAvatar(
+                        radius: 40,
+                        backgroundColor: defaultColor,
+                        child: Text('SAR',
+                            style: TextStyle(
+                                fontSize: 20,
+                                color: Colors.white,
+                                fontWeight: FontWeight.w600)),
+                      ),
                     ),
                   ],
                 ),
@@ -108,20 +109,29 @@ class _SegelScreenState extends State<SegelScreen> {
               flex: 3,
               child: Center(
                   child: Image.asset(
-                'assets/images/market.png',
+                'assets/images/segel.png',
               )),
+            ),
+            const SizedBox(
+              height: 10,
             ),
             Expanded(
               flex: 1,
-              child: Column(
-                children: const [
-                  Center(
-                      widthFactor: 3,
-                      child: Text(
-                        'AlliaNz',
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 24),
-                      )),
+              child: Row(
+                children: [
+                  SizedBox(
+                    width: screenWidth / 5,
+                  ),
+                  Image.asset(
+                    'assets/images/logo.png',
+                  ),
+                  const SizedBox(
+                    width: 25,
+                  ),
+                  const Text(
+                    'AlliaNz',
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
+                  ),
                 ],
               ),
             )

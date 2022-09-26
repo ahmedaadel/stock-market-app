@@ -1,6 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:borsetak/Layout/Home_Layout.dart';
-import 'package:borsetak/components/components.dart';
+import 'package:borsetak/Shared/components/components.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:text_divider/text_divider.dart';

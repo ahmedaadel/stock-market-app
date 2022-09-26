@@ -1,4 +1,7 @@
+import 'package:borsetak/Shared/components/constants.dart';
+import 'package:borsetak/modules/Last_News.dart';
 import 'package:borsetak/modules/Login.dart';
+import 'package:borsetak/modules/Tawsyat.dart';
 import 'package:borsetak/modules/segel_Screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -21,11 +24,12 @@ class MyApp extends StatelessWidget {
     return firebaseApp;
   }
   @override
-  Widget build(BuildContext contex) {
+  Widget build(BuildContext context) {
       return  MaterialApp (
     theme: ThemeData(
-
- scaffoldBackgroundColor: Colors.white,
+      primaryColor: defaultColor,
+        primarySwatch: Colors.lightGreen,
+        scaffoldBackgroundColor: Colors.white,
         appBarTheme:const AppBarTheme(
           actionsIconTheme: IconThemeData(color: Colors.black87),
           iconTheme: IconThemeData(color: Colors.black),
@@ -37,7 +41,7 @@ class MyApp extends StatelessWidget {
         )
       ),
       debugShowCheckedModeBanner: false,
-      home:  SegelScreen(),
+      home: const Directionality(textDirection: TextDirection.rtl,child: TawsyatScreen()),
     );
   }
 }
