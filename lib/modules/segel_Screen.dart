@@ -55,17 +55,22 @@ class _SegelScreenState extends State<SegelScreen> {
                 color: Colors.black54,
                 child: Row(
                   children: [
+
                     const SizedBox(
-                      width: 30,
+                      width: 10,
                     ),
+
                     const Expanded(
+                      flex:1,
                       child: Text('+18 %',
                           style: TextStyle(
                               fontSize: 20,
                               color: Colors.green,
                               fontWeight: FontWeight.w600)),
                     ),
+
                     Expanded(
+                      flex: 2,
                       child: Column(
                         textBaseline: TextBaseline.alphabetic,
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -87,10 +92,9 @@ class _SegelScreenState extends State<SegelScreen> {
                         ],
                       ),
                     ),
-                    const SizedBox(
-                      width: 30,
-                    ),
+
                     const Expanded(
+                      flex: 1,
                       child: CircleAvatar(
                         radius: 40,
                         backgroundColor: defaultColor,
@@ -100,6 +104,9 @@ class _SegelScreenState extends State<SegelScreen> {
                                 color: Colors.white,
                                 fontWeight: FontWeight.w600)),
                       ),
+                    ),
+                    const SizedBox(
+                      width: 10,
                     ),
                   ],
                 ),

@@ -2,8 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 
 class Auth
 {
-  static final FirebaseAuth _auth =FirebaseAuth.instance;
-
+  static final FirebaseAuth _auth = FirebaseAuth.instance;
 
 
  static Future<UserCredential> signUp({
@@ -34,9 +33,7 @@ async {
     user = usr.user;
   }  catch (e) {
       print(e.toString());
-
   }
-
   return user;
 }
 
