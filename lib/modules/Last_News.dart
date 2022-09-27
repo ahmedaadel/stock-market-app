@@ -1,8 +1,8 @@
 import 'package:borsetak/Shared/components/components.dart';
 import 'package:flutter/material.dart';
 
-class LastNews extends StatelessWidget {
-  const LastNews({Key? key}) : super(key: key);
+class LastNewsScreen extends StatelessWidget {
+  const LastNewsScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
