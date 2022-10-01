@@ -29,6 +29,49 @@
             {
               "client_id": "296612228429-im5ahrm7hi9nneqcm7dvioca9r4408o7.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "296612228429-c71mk5keicph3jujh5tugm3g7umunjtc.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "Y"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:296612228429:android:ce64b48706ec845c351b04",
+        "android_client_info": {
+          "package_name": "com.Dawly.borsetakss"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "296612228429-im5ahrm7hi9nneqcm7dvioca9r4408o7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDeTkbLSQ_X7o3Z86Oe8n0W87XN8hdNUvo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "296612228429-im5ahrm7hi9nneqcm7dvioca9r4408o7.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "296612228429-c71mk5keicph3jujh5tugm3g7umunjtc.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "Y"
+              }
             }
           ]
         }

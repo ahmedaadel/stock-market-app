@@ -3,6 +3,7 @@ import 'package:borsetak/Network/Local/Shared_preferences.dart';
 import 'package:borsetak/Shared/components/constants.dart';
 import 'package:borsetak/cubit/cubit.dart';
 import 'package:borsetak/cubit/states.dart';
+import 'package:borsetak/firebase_options.dart';
 import 'package:borsetak/modules/Last_News.dart';
 import 'package:borsetak/modules/Login/Login.dart';
 import 'package:borsetak/modules/Login/LoginCubit.dart';
@@ -15,7 +16,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
-  Firebase.initializeApp();
+  //Firebase.initializeApp();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   await Cache_Helper.init();
   var uid = Cache_Helper.getData(key: 'uid');
   Widget currentScreen = const  LoginScreen();
@@ -54,7 +58,7 @@ class MyApp extends StatelessWidget {
                     iconTheme: IconThemeData(color: Colors.black),
                     backgroundColor: Colors.white,
                     systemOverlayStyle:
-                    SystemUiOverlayStyle(statusBarColor: Colors.white ,statusBarIconBrightness: Brightness.dark ,statusBarBrightness: Brightness.dark),
+                      SystemUiOverlayStyle(statusBarColor: Colors.white ,statusBarIconBrightness: Brightness.dark ,statusBarBrightness: Brightness.dark),
                     elevation: 0.0,
                     titleTextStyle: TextStyle(
                         color: Colors.black,
