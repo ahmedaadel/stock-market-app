@@ -50,6 +50,8 @@ class MyApp extends StatelessWidget {
                 primarySwatch: Colors.lightGreen,
                 scaffoldBackgroundColor: Colors.white,
                 appBarTheme: const AppBarTheme(
+                    
+        
                     actionsIconTheme: IconThemeData(color: Colors.black87),
                     iconTheme: IconThemeData(color: Colors.black),
                     backgroundColor: Colors.white,
@@ -60,7 +62,7 @@ class MyApp extends StatelessWidget {
                         color: Colors.black,
                         fontSize: 20,
                         fontWeight: FontWeight.bold)),
-                bottomNavigationBarTheme: BottomNavigationBarThemeData(
+               /* bottomNavigationBarTheme: BottomNavigationBarThemeData(
                   unselectedItemColor: Colors.black54,
                   backgroundColor: Colors.grey[300],
                   elevation: 15,
@@ -70,7 +72,7 @@ class MyApp extends StatelessWidget {
                   const TextStyle(decorationColor: Colors.black, fontSize: 16),
                   selectedLabelStyle:
                   const TextStyle(decorationColor: Colors.black, fontSize: 16),
-                ),
+                ),*/
               ),
               debugShowCheckedModeBanner: false,
               home:currentScreen

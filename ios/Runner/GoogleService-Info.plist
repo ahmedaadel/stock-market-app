@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>296612228429-j5r4j5uopkrgmbnq21ko72cuit5vvubp.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.296612228429-j5r4j5uopkrgmbnq21ko72cuit5vvubp</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCzcR2tf3RaP1X1VRtiG5I45xYelJg_PvY</string>
+	<key>GCM_SENDER_ID</key>
+	<string>296612228429</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.borsetak</string>
+	<key>PROJECT_ID</key>
+	<string>borsetak-7661d</string>
+	<key>STORAGE_BUCKET</key>
+	<string>borsetak-7661d.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:296612228429:ios:be65e7478f8e5cc1351b04</string>
+</dict>
+</plist>

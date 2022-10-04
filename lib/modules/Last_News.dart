@@ -1,4 +1,5 @@
 import 'package:borsetak/Shared/components/components.dart';
+import 'package:borsetak/Shared/components/constants.dart';
 import 'package:flutter/material.dart';
 
 class LastNewsScreen extends StatelessWidget {
@@ -12,11 +13,11 @@ class LastNewsScreen extends StatelessWidget {
         centerTitle: true,
         title: const Text(
           ' AlliaNz ',
-          style: TextStyle(fontSize: 24),
+          style: TextStyle(fontSize: 22,fontFamily: "ReemKufi",letterSpacing: 1),
         ),
         actions: [
           IconButton(
-              onPressed: () {}, icon: const Icon(Icons.snapchat, size: 35))
+              onPressed: () {}, icon: const Icon(Icons.snapchat, size: 30))
         ],
         leading: IconButton(
             icon: const Icon(
@@ -32,25 +33,32 @@ class LastNewsScreen extends StatelessWidget {
           children: [
             const Text(
               'اخر الاخبار',
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
             ),
-            const SizedBox(
-              height: 15,
+             SizedBox(
+              height: getAppheight(context, 16),
             ),
             Container(
-              decoration: BoxDecoration(
-                  color: Colors.grey[100],
-                  borderRadius: BorderRadius.circular(25)),
-              child: searchForm(
-                  onChange: (value) {},
-                  controller: searchController,
-                  labelText: 'ابحث عن خبر',
-                  suffixIcon: IconButton(
-                    onPressed: () {},
-                    icon: const Icon(
-                      Icons.search,
+              height: getAppheight(context, 36),
+              width: double.infinity,
+              
+              
+              child: TextFormField(
+                textAlignVertical: TextAlignVertical.bottom,
+                  decoration: InputDecoration(
+                    hintText: "ابحث عن خبر",
+                    alignLabelWithHint: true,
+                    hintStyle: TextStyle(fontWeight: FontWeight.bold,color: Color(0x66000000),fontSize: 14),
+                    filled: true,
+                    fillColor: Color(0x80F0F0F0),
+                    border:OutlineInputBorder(
+                      borderSide: BorderSide.none,
+                      borderRadius: BorderRadius.circular(16),
+                      
+
                     ),
-                  )),
+                  ),
+                ),
             )
           ],
         ),
