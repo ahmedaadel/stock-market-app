@@ -1,6 +1,7 @@
 import 'package:borsetak/Shared/components/components.dart';
 import 'package:borsetak/Shared/components/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_iconly/flutter_iconly.dart';
 
 import '../models/stock.dart';
 
@@ -13,13 +14,13 @@ class TawsyatScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text(
+        title:  Text(
           ' AlliaNz ',
-          style: TextStyle(fontSize: 22,fontFamily: "ReemKufi",letterSpacing: 1),
+          style: TextStyle(fontSize: getAppSize(context, 22),fontFamily: "ReemKufi",letterSpacing: 1),
         ),
         actions: [
           IconButton(
-              onPressed: () {}, icon: const Icon(Icons.snapchat, size: 35))
+              onPressed: () {}, icon:  Icon(IconlyBroken.notification, size: getAppSize(context, 24)))
         ],
         leading: IconButton(
             icon: const Icon(
@@ -29,24 +30,24 @@ class TawsyatScreen extends StatelessWidget {
             onPressed: () {}),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(12.0),
+        padding: const EdgeInsets.all(20.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text(
+             Text(
               'التوصيات',
-              style: TextStyle( fontSize: 25),
+              style: TextStyle( fontSize: getAppSize(context, 25)),
             ),
              SizedBox(
               height: getAppheight(context, 20),
             ),
             Container(
               width: double.infinity,
-              height: 42,
+              height: getAppheight(context, 39),
               child: TextFormField(
                 style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 14,
+                  color: Colors.black,
+                  fontSize: getAppSize(context, 14),
                 ),
                 decoration: InputDecoration(
 
@@ -56,28 +57,26 @@ class TawsyatScreen extends StatelessWidget {
                   hintText: "ابحث عن توصية",
                   hintStyle: TextStyle(
                     color: greyColor,
-                    fontSize: 14,
-
-                    
-
+                    fontSize: getAppSize(context, 14),
                   ),
+                 
                   suffixIcon:
-                   Padding(
-                     padding: const EdgeInsets.symmetric(vertical: 3),
-                     child: Container(
+                   Container(
+                    padding:EdgeInsets.only(bottom: 10) ,
+                    width: getAPPWidth(context, 32),
+                    height: getAppheight(context, 32),
+                    decoration: BoxDecoration(
                       
-                      decoration: BoxDecoration(
-                        borderRadius:BorderRadius.circular(14),
-                        color: defaultColor,
-                      ),
-                      
-                      child: IconButton(icon:Icon(Icons.search),
+                      borderRadius:BorderRadius.circular(14),
+                      color: defaultColor,
+                    ),
+                    
+                    child: IconButton(icon:Icon(IconlyBroken.search,size: getAppSize(context, 20),),
                       onPressed: (){},
                       color: Colors.white,
-                      iconSize: 22,
+                      iconSize: getAppSize(context, 16),
                       ),
                   ),
-                   ),
                   border:UnderlineInputBorder(),
                   
                   
@@ -88,7 +87,7 @@ class TawsyatScreen extends StatelessWidget {
            SizedBox(height: getAppheight(context, 30),),
             Expanded(
               child: ListView.separated(
-              itemBuilder: (context, index) => newsBuilder2(Stock(name: "سهم الرياض",description: "كنا هنا وسهم الرياض كان يرتفع اكثر ف"), context),
+              itemBuilder: (context, index) => newsBuilder2(Stock(name: "سهم الرياض",description: "ارتفع سهم الرياض وسوف يكون فرصة جيدة للشراء ف..."), context),
               separatorBuilder: (context,index)=>SizedBox(height: getAppheight(context, 21),),
               itemCount: 4),
             )
@@ -160,9 +159,9 @@ Widget newsBuilder2(Stock stock,context){
             children:[
               Container(
                 height: getAppheight(context, 157),
-                width: double.infinity,
+                width: getAPPWidth(context, 335),
                 decoration: BoxDecoration(
-                image:DecorationImage(image: AssetImage("assets/images/holding phone.png"),fit: BoxFit.cover),
+                image:DecorationImage(image: AssetImage("assets/images/holding phone.png"),fit: BoxFit.fitWidth),
                 borderRadius: BorderRadius.circular(12),
 
               ),
@@ -174,7 +173,7 @@ Widget newsBuilder2(Stock stock,context){
                 overflow: TextOverflow.ellipsis,
                 style: TextStyle(
                   letterSpacing: 1,
-                  fontSize: 16,
+                  fontSize: getAppSize(context, 16),
                   color: Colors.black,
                   fontWeight: FontWeight.bold,
                   
@@ -182,10 +181,10 @@ Widget newsBuilder2(Stock stock,context){
 
                 ),
               ),
-              SizedBox(height:getAppheight(context, 10),),
+             // SizedBox(height:getAppheight(context, 10),),
               Text("${stock.description}",
                 style: TextStyle(
-                  fontSize: 13,
+                  fontSize: getAppSize(context, 13),
                   fontWeight: FontWeight.bold,
                   color: greyColor,
 

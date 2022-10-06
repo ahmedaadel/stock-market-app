@@ -5,6 +5,7 @@ import 'package:borsetak/cubit/states.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class HomeLayout extends StatelessWidget {
   const HomeLayout({Key? key}) : super(key: key);
@@ -12,11 +13,10 @@ class HomeLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final items=<Widget>[
-              Icon(Icons.newspaper_rounded
-              ),
-               Icon(Icons.rate_review_rounded ),
-                Icon(Icons.verified),
-                Icon(Icons.monetization_on ),
+              SvgPicture.asset("assets/images/icon_news.svg",height: getAppheight(context,50),width: getAPPWidth(context, 50),),
+             SvgPicture.asset("assets/images/tawsyat.svg",height: getAppheight(context,50),width: getAPPWidth(context, 50),),
+              SvgPicture.asset("assets/images/segel.svg",height: getAppheight(context,50),width: getAPPWidth(context, 50),),
+                SvgPicture.asset("assets/images/arbah.svg",height: getAppheight(context,50),width: getAPPWidth(context, 50),),
               ];
 
     return BlocConsumer<AppCubit,AppStates>(
@@ -51,7 +51,7 @@ class HomeLayout extends StatelessWidget {
                       cub.changeBottomScreen(value);
                     },
                     items: items,
-                    height: getAppheight(context,55),
+                    height: getAppheight(context,60),
                   ),
                 ),
               ),

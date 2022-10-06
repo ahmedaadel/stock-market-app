@@ -11,7 +11,12 @@ class AppCubit extends Cubit<AppStates> {
   static AppCubit get(context) =>BlocProvider.of(context);
 
   int currentIndex=0 ;
-  List<Widget> navBarScreens= const [LastNewsScreen(),SegelScreen(),TawsyatScreen(),ArbahScreen()];
+  List<Widget> navBarScreens= const [
+      LastNewsScreen(),
+      TawsyatScreen(),
+      SegelScreen(),
+      ArbahScreen()
+  ];
 
 
   void changeBottomScreen(int index)

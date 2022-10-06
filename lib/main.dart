@@ -1,5 +1,6 @@
 import 'package:borsetak/Layout/Home_Layout.dart';
 import 'package:borsetak/Network/Local/Shared_preferences.dart';
+import 'package:borsetak/Network/Remote/Dio_Helper.dart';
 import 'package:borsetak/Shared/components/constants.dart';
 import 'package:borsetak/cubit/cubit.dart';
 import 'package:borsetak/cubit/states.dart';
@@ -22,6 +23,7 @@ void main() async{
  // if(uid != null){
  //   currentScreen = const HomeLayout();
  // }
+ DioHelper.initDio();
   runApp(MyApp(currentScreen:currentScreen) );
 }
 

@@ -1,6 +1,7 @@
 import 'package:borsetak/Shared/components/components.dart';
 import 'package:borsetak/Shared/components/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_iconly/flutter_iconly.dart';
 
 class LastNewsScreen extends StatelessWidget {
   const LastNewsScreen({Key? key}) : super(key: key);
@@ -11,13 +12,13 @@ class LastNewsScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text(
+        title:  Text(
           ' AlliaNz ',
-          style: TextStyle(fontSize: 22,fontFamily: "ReemKufi",letterSpacing: 1),
+          style: TextStyle(fontSize: getAppSize(context, 22),fontFamily: "ReemKufi",letterSpacing: 1),
         ),
         actions: [
           IconButton(
-              onPressed: () {}, icon: const Icon(Icons.snapchat, size: 30))
+              onPressed: () {}, icon:  Icon(IconlyBroken.notification, size: getAppSize(context, 24)))
         ],
         leading: IconButton(
             icon: const Icon(
@@ -31,9 +32,9 @@ class LastNewsScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text(
+             Text(
               'اخر الاخبار',
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
+              style: TextStyle(fontWeight: FontWeight.normal, fontSize: getAppSize(context, 25)),
             ),
              SizedBox(
               height: getAppheight(context, 16),
@@ -48,7 +49,7 @@ class LastNewsScreen extends StatelessWidget {
                   decoration: InputDecoration(
                     hintText: "ابحث عن خبر",
                     alignLabelWithHint: true,
-                    hintStyle: TextStyle(fontWeight: FontWeight.bold,color: Color(0x66000000),fontSize: 14),
+                    hintStyle: TextStyle(fontWeight: FontWeight.bold,color: Color(0x66000000),fontSize: getAppSize(context, 12)),
                     filled: true,
                     fillColor: Color(0x80F0F0F0),
                     border:OutlineInputBorder(
