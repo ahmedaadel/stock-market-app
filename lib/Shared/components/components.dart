@@ -1,3 +1,4 @@
+import 'package:borsetak/Shared/components/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
@@ -67,4 +68,24 @@ Color toastColor(ToastState state) {
       break;
   }
   return color;
+}
+
+Text DefaultText({
+  String text="",
+  Color color=Colors.black,
+  String  font="ReemKufi",
+  double ? font_size 
+
+
+}){
+
+  return Text(
+    text,
+    style:TextStyle(
+    color: color,
+    fontFamily: font,
+    fontSize: font_size,
+
+
+  ));
 }

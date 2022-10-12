@@ -74,7 +74,7 @@ flutter:
 
   assets:
      - assets/images/
-     
+     - assets/icons/
   fonts:
     - family: ReemKufi
       fonts:
@@ -91,9 +91,9 @@ flutter:
         #- asset: fonts/DMSans-Bold.ttf
          # weight: 700
       
-    #- family: OpenSans
-     # fonts:
-      #  - asset: fonts/OpenSans-Regular.ttf
+    - family: Cairo
+      fonts:
+        - asset: fonts/Cairo-Regular.ttf
        # - asset: fonts/OpenSans-Italic.ttf
         #  style: italic
         #- asset: fonts/OpenSans-Bold.ttf

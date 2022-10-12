@@ -13,10 +13,10 @@ class HomeLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final items=<Widget>[
-              SvgPicture.asset("assets/images/icon_news.svg",height: getAppheight(context,50),width: getAPPWidth(context, 50),),
-             SvgPicture.asset("assets/images/tawsyat.svg",height: getAppheight(context,50),width: getAPPWidth(context, 50),),
-              SvgPicture.asset("assets/images/segel.svg",height: getAppheight(context,50),width: getAPPWidth(context, 50),),
-                SvgPicture.asset("assets/images/arbah.svg",height: getAppheight(context,50),width: getAPPWidth(context, 50),),
+              SvgPicture.asset("assets/icons/icon_news.svg",height: getAppheight(context,50),width: getAPPWidth(context, 50),),
+             SvgPicture.asset("assets/icons/tawsyat.svg",height: getAppheight(context,50),width: getAPPWidth(context, 50),),
+              SvgPicture.asset("assets/icons/segel.svg",height: getAppheight(context,50),width: getAPPWidth(context, 50),),
+                SvgPicture.asset("assets/icons/arbah.svg",height: getAppheight(context,50),width: getAPPWidth(context, 50),),
               ];
 
     return BlocConsumer<AppCubit,AppStates>(

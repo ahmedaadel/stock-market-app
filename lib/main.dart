@@ -4,6 +4,7 @@ import 'package:borsetak/Network/Remote/Dio_Helper.dart';
 import 'package:borsetak/Shared/components/constants.dart';
 import 'package:borsetak/cubit/cubit.dart';
 import 'package:borsetak/cubit/states.dart';
+import 'package:borsetak/modules/Admin/admin_home.dart';
 import 'package:borsetak/modules/Last_News.dart';
 import 'package:borsetak/modules/Login/Login.dart';
 import 'package:borsetak/modules/Login/LoginCubit.dart';
@@ -24,7 +25,7 @@ void main() async{
  //   currentScreen = const HomeLayout();
  // }
  DioHelper.initDio();
-  runApp(MyApp(currentScreen:currentScreen) );
+  runApp(MyApp(currentScreen:AdminHomeScreen()) );
 }
 
 
