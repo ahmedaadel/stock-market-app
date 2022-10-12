@@ -1,8 +1,6 @@
 import 'package:borsetak/Shared/components/components.dart';
 import 'package:borsetak/Shared/components/constants.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class AddTawsyaScreen extends StatelessWidget {
@@ -16,10 +14,14 @@ class AddTawsyaScreen extends StatelessWidget {
       child: Scaffold(
         resizeToAvoidBottomInset: false,
         appBar: AppBar(
-          title: Center(
-            child: DefaultText(
-              text: "AlliaNz",
-              font_size: getAppSize(context, 22),
+         
+          title: Padding(
+            padding:  EdgeInsets.only(left:getAPPWidth(context, 50)),
+            child: Center(
+              child: DefaultText(
+                text: "AlliaNz",
+                font_size: getAppSize(context, 22),
+              ),
             ),
           ),
         ),
