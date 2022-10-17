@@ -32,7 +32,6 @@ class _LoginDraftScreenState extends State<LoginDraftScreen> {
           textDirection: TextDirection.rtl,
           child: Scaffold(
             appBar: AppBar(
-              title: Center(child: DefaultText(text:"AlliaNz",color: Colors.black,font_size:getAppSize(context, 22))),
             ),
             body:SingleChildScrollView(
               child: Padding(

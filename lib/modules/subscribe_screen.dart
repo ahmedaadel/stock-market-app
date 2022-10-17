@@ -21,7 +21,7 @@ class SubscribeScreen extends StatelessWidget {
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
-        resizeToAvoidBottomInset: true,
+        appBar: AppBar(),
 
         body: SingleChildScrollView(
           child: Padding(

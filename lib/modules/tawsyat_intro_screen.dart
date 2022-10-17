@@ -77,7 +77,7 @@ class TawsyatIntroScreen extends StatelessWidget {
                  font_size: 18,
                  onPressed: (){
 
-                   Navigator.pushReplacement(context,
+                   Navigator.push(context,
                        MaterialPageRoute(builder: (context) =>SubscribeScreen()));
                  }
              )
