@@ -1,5 +1,6 @@
 import 'package:borsetak/Shared/components/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 Widget textForm({
@@ -88,3 +89,145 @@ Text DefaultText({
 
   ));
 }
+
+Widget DefaultButton({
+  context,
+  required double height,
+  required double width,
+  required double radius,
+  required Color color,
+  required String text,
+  required Color font_color,
+  required double font_size,
+  String ? font=" ",
+  required VoidCallback  onPressed,
+  
+
+
+
+
+
+}){
+return  Container(
+   width: getAPPWidth(context, width),
+  height:getAppheight(context, height) ,
+child: MaterialButton(
+   splashColor: Color(0xff353535),
+    //database insert add tawsya logic
+    onPressed: onPressed,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(radius)
+                          
+        ),
+                            
+        color: color,
+          child:Center(
+            child: DefaultText(
+                text: text,color:font_color,font:font ?? "" ,font_size: font_size
+                  ),
+                  )),
+             );
+}
+
+
+
+
+AppBar DefAppBar(context){
+  return AppBar(
+    centerTitle: true,
+    title:  Text(
+      ' AlliaNz ',
+      style: TextStyle(fontSize: getAppSize(context, 22),fontFamily: "ReemKufi",letterSpacing: 1),
+    ),
+    actions: [
+      IconButton(
+          onPressed: () {}, icon:  Icon(IconlyBroken.notification, size: getAppSize(context, 24)))
+    ],
+    leading: IconButton(
+        icon: const Icon(
+          Icons.menu,
+          size: 30,
+        ),
+        onPressed: () {}),
+  );
+}
+
+
+Widget DefaultTextForm({
+  bool secure = false,
+  required Function validationFun,
+  required TextEditingController controller,
+  required String labelText,
+  required double fontsize,
+
+  Function? onChange,
+  Icon? prefixIcon,
+  IconButton? suffixIcon,
+  TextInputType? keyboardType,
+}) =>
+    TextFormField(
+
+      textAlignVertical: TextAlignVertical.bottom,
+
+      controller: controller,
+      validator: (value) => validationFun(value),
+      keyboardType: keyboardType,
+      onChanged: (value) => onChange,
+      obscureText: secure,
+      decoration: InputDecoration(
+        alignLabelWithHint: true,
+          enabledBorder: UnderlineInputBorder(
+              borderSide: BorderSide(
+                color: Color(0x33000000),
+              )
+          ),
+
+          labelText: labelText,
+          labelStyle: TextStyle(
+            fontSize:fontsize,
+            color: Color(0x66000000),
+
+          ),
+          prefixIcon: prefixIcon,
+          suffixIcon: suffixIcon),
+    );
+
+
+
+Widget DefaultTextFormWithIcons({
+  bool secure = false,
+  required Function validationFun,
+  required TextEditingController controller,
+  required String labelText,
+  required double fontsize,
+
+  Function? onChange,
+  Icon? prefixIcon,
+  IconButton? suffixIcon,
+  TextInputType? keyboardType,
+}) =>
+    TextFormField(
+
+
+
+      controller: controller,
+      validator: (value) => validationFun(value),
+      keyboardType: keyboardType,
+      onChanged: (value) => onChange,
+      obscureText: secure,
+      decoration: InputDecoration(
+
+          enabledBorder: UnderlineInputBorder(
+              borderSide: BorderSide(
+                color: Color(0x33000000),
+              )
+          ),
+
+          labelText: labelText,
+          labelStyle: TextStyle(
+            fontSize:fontsize,
+            color: Color(0x66000000),
+
+          ),
+          prefixIcon: prefixIcon,
+          suffixIcon: suffixIcon),
+    );
