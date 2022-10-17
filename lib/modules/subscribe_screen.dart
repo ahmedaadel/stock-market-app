@@ -3,7 +3,7 @@
 import 'package:borsetak/Layout/Home_Layout.dart';
 import 'package:borsetak/Shared/components/components.dart';
 import 'package:borsetak/Shared/components/constants.dart';
-import 'package:borsetak/modules/subsribed_screen.dart';
+import 'package:borsetak/modules/subscribed_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 

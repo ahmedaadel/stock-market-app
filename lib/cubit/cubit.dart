@@ -3,7 +3,7 @@ import 'package:borsetak/modules/Arba7_Screen.dart';
 import 'package:borsetak/modules/Last_News.dart';
 import 'package:borsetak/modules/Tawsyat.dart';
 import 'package:borsetak/modules/segel_Screen.dart';
-import 'package:borsetak/modules/subsribed_screen.dart';
+import 'package:borsetak/modules/subscribed_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
