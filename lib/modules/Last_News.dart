@@ -40,18 +40,17 @@ class LastNewsScreen extends StatelessWidget {
               height: getAppheight(context, 16),
             ),
             Container(
-              height: getAppheight(context, 36),
+              height: getAppheight(context, 40),
               width: double.infinity,
-              
-              
               child: TextFormField(
                 textAlignVertical: TextAlignVertical.bottom,
                   decoration: InputDecoration(
                     hintText: "ابحث عن خبر",
                     alignLabelWithHint: true,
-                    hintStyle: TextStyle(fontWeight: FontWeight.bold,color: Color(0x66000000),fontSize: getAppSize(context, 12)),
+                    hintStyle: TextStyle(fontWeight: FontWeight.bold,color:const Color(0x66000000),fontSize: getAppSize(context, 15)),
                     filled: true,
-                    fillColor: Color(0x80F0F0F0),
+                    suffixIcon: IconButton(onPressed:(){} ,icon: Icon(IconlyBroken.search,size: getAppSize(context, 23),)),
+                    fillColor: const Color(0x80F0F0F0),
                     border:OutlineInputBorder(
                       borderSide: BorderSide.none,
                       borderRadius: BorderRadius.circular(16),

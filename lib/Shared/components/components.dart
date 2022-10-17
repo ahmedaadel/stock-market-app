@@ -45,8 +45,8 @@ void showToast({required String text, required ToastState state}) {
   Fluttertoast.showToast(
       msg: text,
       toastLength: Toast.LENGTH_LONG,
-      gravity: ToastGravity.CENTER,
-      timeInSecForIosWeb: 5,
+      gravity: ToastGravity.BOTTOM,
+      timeInSecForIosWeb: 8,
       backgroundColor: toastColor(state),
       textColor: Colors.white,
       fontSize: 16.0);
@@ -74,8 +74,7 @@ Text DefaultText({
   String text="",
   Color color=Colors.black,
   String  font="ReemKufi",
-  double ? font_size 
-
+  double ? font_size
 
 }){
 

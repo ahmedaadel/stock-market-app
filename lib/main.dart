@@ -1,10 +1,12 @@
 import 'package:borsetak/Layout/Home_Layout.dart';
 import 'package:borsetak/Network/Local/Shared_preferences.dart';
 import 'package:borsetak/Network/Remote/Dio_Helper.dart';
+import 'package:borsetak/Shared/bloc_observer.dart';
 import 'package:borsetak/Shared/components/constants.dart';
 import 'package:borsetak/cubit/cubit.dart';
 import 'package:borsetak/cubit/states.dart';
 import 'package:borsetak/modules/Admin/admin_home.dart';
+import 'package:borsetak/modules/Admin/cubit/Admin_Cubit.dart';
 import 'package:borsetak/modules/Last_News.dart';
 import 'package:borsetak/modules/Login/Login.dart';
 import 'package:borsetak/modules/Login/LoginCubit.dart';
@@ -17,15 +19,16 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
+  Bloc.observer = MyBlocObserver();
   Firebase.initializeApp();
   await Cache_Helper.init();
   var uid = Cache_Helper.getData(key: 'uid');
   Widget currentScreen = const  LoginScreen();
- // if(uid != null){
- //   currentScreen = const HomeLayout();
- // }
+  if(uid != null){
+   currentScreen = const HomeLayout();
+  }
  DioHelper.initDio();
-  runApp(MyApp(currentScreen:AdminHomeScreen()) );
+  runApp(MyApp(currentScreen:currentScreen) );
 }
 
 
@@ -42,7 +45,8 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (context) => AppCubit()) ,
-        BlocProvider(create:(context) =>  LoginCubit())
+        BlocProvider(create:(context) =>  LoginCubit()),
+        BlocProvider(create:(context) =>  AdminCubit()),
       ],
       child: BlocConsumer<AppCubit, AppStates>(
         listener: (context, state) {},
@@ -53,8 +57,6 @@ class MyApp extends StatelessWidget {
                 primarySwatch: Colors.lightGreen,
                 scaffoldBackgroundColor: Colors.white,
                 appBarTheme: const AppBarTheme(
-                    
-        
                     actionsIconTheme: IconThemeData(color: Colors.black87),
                     iconTheme: IconThemeData(color: Colors.black),
                     backgroundColor: Colors.white,
