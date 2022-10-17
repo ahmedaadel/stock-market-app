@@ -6,6 +6,8 @@ import 'package:borsetak/modules/Login/LoginStates.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../Shared/components/constants.dart';
+
 
 class LoginCubit extends Cubit<LoginStates> {
   LoginCubit() : super(InitialState());
@@ -23,6 +25,7 @@ class LoginCubit extends Cubit<LoginStates> {
             key: 'uid', value: value.uid)
             .then((value) {
               emit(LoginSuccessState());
+              user_satate=3;
           Navigator.of(context).pushReplacement(
               MaterialPageRoute(builder: (context) => const HomeLayout()));
         });

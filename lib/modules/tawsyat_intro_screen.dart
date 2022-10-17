@@ -1,4 +1,6 @@
 import 'package:borsetak/Shared/components/components.dart';
+import 'package:borsetak/modules/login_screen.dart';
+import 'package:borsetak/modules/subscribe_screen.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
@@ -8,6 +10,7 @@ import '../Shared/components/constants.dart';
 
 
 class TawsyatIntroScreen extends StatelessWidget {
+  const TawsyatIntroScreen({Key? key}) : super(key: key);
 
 
   @override
@@ -63,7 +66,22 @@ class TawsyatIntroScreen extends StatelessWidget {
 
           ),
              SizedBox(height:getAppheight(context, 20)),
-             Center(child: DefaultButton(context: context,height: 63.8, width: 307, radius: 12, color: Color(0xff8cd351), text: "اشترك معنا لتصلك توصياتنا", font_color: Colors.white, font_size: 18, onPressed: (){})),
+             Center(child: DefaultButton(
+                 context: context,
+                 height: 63.8,
+                 width: 307,
+                 radius: 12,
+                 color: Color(0xff8cd351),
+                 text: "اشترك معنا لتصلك توصياتنا",
+                 font_color: Colors.white,
+                 font_size: 18,
+                 onPressed: (){
+
+                   Navigator.pushReplacement(context,
+                       MaterialPageRoute(builder: (context) =>SubscribeScreen()));
+                 }
+             )
+             ),
             SizedBox(height:getAppheight(context, 13)),
             Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -73,7 +91,10 @@ class TawsyatIntroScreen extends StatelessWidget {
                 font: "",
                 font_size: getAppSize(context, 13.5)
               ),
-              TextButton(onPressed: (){},
+              TextButton(onPressed: (){
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => LoginDraftScreen()));
+              },
                 child: Text("قم بتسجيل الدخول",
                   style: TextStyle(
                     color: Color(0xff296EBA),

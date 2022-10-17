@@ -12,6 +12,7 @@ class HomeLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+   
     final items=<Widget>[
               SvgPicture.asset("assets/icons/icon_news.svg",height: getAppheight(context,50),width: getAPPWidth(context, 50),),
              SvgPicture.asset("assets/icons/tawsyat.svg",height: getAppheight(context,50),width: getAPPWidth(context, 50),),
@@ -22,7 +23,16 @@ class HomeLayout extends StatelessWidget {
     return BlocConsumer<AppCubit,AppStates>(
       listener: (context, state) {},
       builder: (context, state) {
+        
         var cub = AppCubit.get(context);
+        List decideNavBar(int userState){
+          if (userState==1){return cub.navBarScreens;}
+          else if (userState==2){return cub.navBarScreens2;}
+          else{
+            return cub.navBarScreens3;
+          }
+
+        }
         return Directionality(
           textDirection: TextDirection.rtl,
           child: Container(
@@ -33,7 +43,7 @@ class HomeLayout extends StatelessWidget {
                 
                 
                 backgroundColor: Colors.white,
-                body: cub.navBarScreens[cub.currentIndex],
+                body: decideNavBar(user_satate)[cub.currentIndex],
             
                 bottomNavigationBar: Theme(
                   data: ThemeData(
@@ -60,5 +70,6 @@ class HomeLayout extends StatelessWidget {
         );
       },
     );
+
   }
 }

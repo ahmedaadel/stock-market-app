@@ -1,7 +1,9 @@
 
 
+import 'package:borsetak/Layout/Home_Layout.dart';
 import 'package:borsetak/Shared/components/components.dart';
 import 'package:borsetak/Shared/components/constants.dart';
+import 'package:borsetak/modules/subsribed_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -20,7 +22,7 @@ class SubscribeScreen extends StatelessWidget {
       textDirection: TextDirection.rtl,
       child: Scaffold(
         resizeToAvoidBottomInset: true,
-        appBar: DefAppBar(context),
+
         body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.only(top:20,left:20,right: 20),
@@ -97,6 +99,9 @@ class SubscribeScreen extends StatelessWidget {
                           onPressed: (){
                             if (_formKey.currentState!.validate()) {
                               print("object");
+                              user_satate=2;
+                              Navigator.push(context,
+                                  MaterialPageRoute(builder: (context) =>HomeLayout()));
                             }
                           }
                       ),

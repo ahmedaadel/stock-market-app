@@ -6,6 +6,9 @@ import 'package:flutter_svg/flutter_svg.dart';
 import '../Shared/components/constants.dart';
 
 class SubscribedScreen extends StatelessWidget {
+  const SubscribedScreen({Key? key}) : super(key: key);
+
+
 
   @override
   Widget build(BuildContext context) {
