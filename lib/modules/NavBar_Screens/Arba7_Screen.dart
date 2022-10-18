@@ -11,25 +11,7 @@ class ArbahScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
-    return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: const Text(
-          ' Ali أهلا ',
-          style: TextStyle(fontSize: 24),
-        ),
-        actions: [
-          IconButton(
-              onPressed: () {}, icon:  Icon(IconlyBroken.notification,size: getAppSize(context, 24),color:Colors.black ))
-        ],
-        leading: IconButton(
-            icon: const Icon(
-              Icons.menu,
-              size: 30,
-            ),
-            onPressed: () {}),
-      ),
-      body: Padding(
+    return  Padding(
         padding: const EdgeInsets.symmetric(horizontal:16.0, vertical: 5),
         child: Column(
           textBaseline: TextBaseline.alphabetic,
@@ -157,8 +139,8 @@ class ArbahScreen extends StatelessWidget {
             )
           ],
         ),
-      ),
-    );
+      );
+
   }
 
 }

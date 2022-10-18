@@ -24,6 +24,20 @@ class SignUPErrorState extends LoginStates {
   SignUPErrorState(this.error);
 }
 
-class LoginIsAsycCallSuccessState extends LoginStates {
-}
+class LoginIsAsycCallSuccessState extends LoginStates {}
 
+class AddUserToDataBaseSuccessState extends LoginStates {}
+
+class AddUserToDataBaseErrorState extends LoginStates {}
+
+
+class UserLoginLoadingState extends LoginStates {}
+
+
+/////// old cubit states
+
+class BottomNavBarState extends LoginStates {}
+
+class SignOutSuccessState extends LoginStates {}
+
+class SignOutErrorState extends LoginStates {}

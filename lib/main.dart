@@ -7,14 +7,9 @@ import 'package:borsetak/cubit/cubit.dart';
 import 'package:borsetak/cubit/states.dart';
 import 'package:borsetak/modules/Admin/admin_home.dart';
 import 'package:borsetak/modules/Admin/cubit/Admin_Cubit.dart';
-import 'package:borsetak/modules/Last_News.dart';
 import 'package:borsetak/modules/Login/Login.dart';
 import 'package:borsetak/modules/Login/LoginCubit.dart';
-import 'package:borsetak/modules/Tawsyat.dart';
-import 'package:borsetak/modules/login_screen.dart';
-import 'package:borsetak/modules/segel_Screen.dart';
-import 'package:borsetak/modules/subscribe_screen.dart';
-import 'package:borsetak/modules/tawsyat_intro_screen.dart';
+import 'package:borsetak/modules/Login/LoginStates.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -25,13 +20,14 @@ void main() async{
   Bloc.observer = MyBlocObserver();
   Firebase.initializeApp();
   await Cache_Helper.init();
-  var uid = Cache_Helper.getData(key: 'uid');
-  Widget currentScreen = const  LoginScreen();
-  if(uid != null){
-   currentScreen = const HomeLayout();
-  }
+  userId = Cache_Helper.getData(key: 'uid');
+
+  // Widget currentScreen = const  LoginScreen();
+  // if(uid != null){
+  //  currentScreen = const HomeLayout();
+  // }
  DioHelper.initDio();
-  runApp(MyApp(currentScreen:currentScreen) );
+  runApp(const MyApp(currentScreen: HomeLayout()) );
 }
 
 
@@ -47,11 +43,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(create: (context) => AppCubit()) ,
         BlocProvider(create:(context) =>  LoginCubit()),
         BlocProvider(create:(context) =>  AdminCubit()),
       ],
-      child: BlocConsumer<AppCubit, AppStates>(
+      child: BlocConsumer<LoginCubit, LoginStates>(
         listener: (context, state) {},
         builder: (context, state) {
           return MaterialApp(

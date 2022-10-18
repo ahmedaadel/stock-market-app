@@ -7,7 +7,8 @@ Widget textForm({
   bool secure = false,
   required Function validationFun,
   required TextEditingController controller,
-  required String labelText,
+  String? labelText,
+  String? hintText,
   Function? onChange,
   IconButton? prefixIcon,
   IconButton? suffixIcon,
@@ -22,6 +23,7 @@ Widget textForm({
       decoration: InputDecoration(
           border: OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
           labelText: labelText,
+          hintText: hintText,
           prefixIcon: prefixIcon,
           suffixIcon: suffixIcon),
     );

@@ -1,9 +1,6 @@
-
-
 import 'package:borsetak/Layout/Home_Layout.dart';
 import 'package:borsetak/Shared/components/components.dart';
 import 'package:borsetak/Shared/components/constants.dart';
-import 'package:borsetak/modules/subscribed_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -22,7 +19,6 @@ class SubscribeScreen extends StatelessWidget {
       textDirection: TextDirection.rtl,
       child: Scaffold(
         appBar: AppBar(),
-
         body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.only(top:20,left:20,right: 20),
@@ -56,7 +52,6 @@ class SubscribeScreen extends StatelessWidget {
                           return "هذا الحقل مطلوب";
                         }
                         return null;
-
                       },
                           controller: nameController,
                           labelText: "الاسم",
@@ -101,14 +96,14 @@ class SubscribeScreen extends StatelessWidget {
                               print("object");
                               user_satate=2;
                               Navigator.push(context,
-                                  MaterialPageRoute(builder: (context) =>HomeLayout()));
+                                  MaterialPageRoute(builder: (context) =>const HomeLayout()));
                             }
                           }
                       ),
                       SizedBox(height:getAppheight(context, 10)),
                       DefaultText(
                         text: "بمجرد الضغط علي زر الاشتراك سوف يتم التواصل معك\nمن قبل احد عملائنا في اسرع وقت",
-                        color: Color(0x80000000),font_size: getAppSize(context, 14),font: ""
+                        color:const Color(0x80000000),font_size: getAppSize(context, 14),font: ""
                       )
 
                     ],

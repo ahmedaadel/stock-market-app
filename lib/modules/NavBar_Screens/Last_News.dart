@@ -1,4 +1,3 @@
-import 'package:borsetak/Shared/components/components.dart';
 import 'package:borsetak/Shared/components/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
@@ -9,25 +8,7 @@ class LastNewsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     TextEditingController searchController = TextEditingController();
-    return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title:  Text(
-          ' AlliaNz ',
-          style: TextStyle(fontSize: getAppSize(context, 22),fontFamily: "ReemKufi",letterSpacing: 1),
-        ),
-        actions: [
-          IconButton(
-              onPressed: () {}, icon:  Icon(IconlyBroken.notification, size: getAppSize(context, 24)))
-        ],
-        leading: IconButton(
-            icon: const Icon(
-              Icons.menu,
-              size: 30,
-            ),
-            onPressed: () {}),
-      ),
-      body: Padding(
+    return  Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -49,21 +30,19 @@ class LastNewsScreen extends StatelessWidget {
                     alignLabelWithHint: true,
                     hintStyle: TextStyle(fontWeight: FontWeight.bold,color:const Color(0x66000000),fontSize: getAppSize(context, 15)),
                     filled: true,
-                    suffixIcon: IconButton(onPressed:(){} ,icon: Icon(IconlyBroken.search,size: getAppSize(context, 23),)),
+                    suffixIcon: IconButton(onPressed:(){} ,icon: Icon(IconlyBroken.search,size: getAppSize(context, 23),),color: defaultColor,),
                     fillColor: const Color(0x80F0F0F0),
                     border:OutlineInputBorder(
                       borderSide: BorderSide.none,
                       borderRadius: BorderRadius.circular(16),
-                      
-
                     ),
                   ),
                 ),
             )
           ],
         ),
-      ),
-    );
+      );
+
   }
 }
 
