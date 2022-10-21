@@ -155,7 +155,6 @@ class _AddTawsyaScreenState extends State<AddTawsyaScreen> {
                                     maxLines: 6,
                                     textAlignVertical: TextAlignVertical.bottom,
                                     decoration: InputDecoration(
-
                                       // hintText: "مثلا:  ارتفع سهم الرياض وسوف تكون فرصة جيدة للشراء",
                                         hintStyle: const TextStyle(
                                             color: Color(0x66000000)),

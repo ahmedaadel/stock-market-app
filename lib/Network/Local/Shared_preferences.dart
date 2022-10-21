@@ -29,4 +29,11 @@ class Cache_Helper {
   static Future<bool> removeData({required String key}) async {
     return await sharedPref.remove(key);
   }
+
+
+  static Future<bool> removeAllData()
+  async{
+    return await sharedPref.clear();
+  }
+
 }

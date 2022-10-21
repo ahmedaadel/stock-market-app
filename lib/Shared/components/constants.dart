@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 String? userId;
+String? role;
 const Color defaultColor = Color(0xFF8DC351);
 const Color blackColor = Color(0xFF353535);
 const Color greyColor = Color(0xFFc1c1c1);

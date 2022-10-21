@@ -26,3 +26,13 @@ class AddUserToDataBaseErrorState extends AdminStates {}
 
 
 class UserLoginLoadingState extends AdminStates {}
+
+class SignOutSuccessState extends AdminStates {}
+
+class SignOutErrorState extends AdminStates {}
+
+class AdminAddNewsToDBSuccessState extends AdminStates {}
+
+class AdminAddNewsToDBErrorState extends AdminStates {}
+
+

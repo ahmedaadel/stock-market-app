@@ -3,8 +3,6 @@ import 'package:borsetak/Network/Local/Shared_preferences.dart';
 import 'package:borsetak/Network/Remote/Dio_Helper.dart';
 import 'package:borsetak/Shared/bloc_observer.dart';
 import 'package:borsetak/Shared/components/constants.dart';
-import 'package:borsetak/cubit/cubit.dart';
-import 'package:borsetak/cubit/states.dart';
 import 'package:borsetak/modules/Admin/admin_home.dart';
 import 'package:borsetak/modules/Admin/cubit/Admin_Cubit.dart';
 import 'package:borsetak/modules/Login/Login.dart';
@@ -18,16 +16,21 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
   Bloc.observer = MyBlocObserver();
-  Firebase.initializeApp();
+  await Firebase.initializeApp();
   await Cache_Helper.init();
+  await DioHelper.initDio();
   userId = Cache_Helper.getData(key: 'uid');
+  role=  Cache_Helper.getData(key: 'role');
 
-  // Widget currentScreen = const  LoginScreen();
-  // if(uid != null){
-  //  currentScreen = const HomeLayout();
-  // }
- DioHelper.initDio();
-  runApp(const MyApp(currentScreen: HomeLayout()) );
+  Widget currentScreen = const  HomeLayout();
+  if(userId != null)
+  {
+    if(role == 'admin') {
+      currentScreen = const AdminHomeScreen();
+    }
+
+  }
+  runApp(MyApp(currentScreen: currentScreen));
 }
 
 

@@ -36,18 +36,25 @@ class LoginCubit extends Cubit<LoginStates> {
               .collection('users')
               .doc(userId)
               .get()
-              .then((value) {
+              .then((value) async {
                 UserModel userModel=UserModel.fromJson(value.data());
                 if(userModel.role =='user')
                   {
-                    decideNavBar(3);
-                    Navigator.of(context).pop();
-                    emit(LoginSuccessState());
+                    await Cache_Helper.saveData(key: 'role', value:'user').then((value)
+                    {
+                      decideNavBar(3);
+                      Navigator.of(context).pop();
+                      emit(LoginSuccessState());
+                    }).catchError((error){print(error);});
                   }
                 else if(userModel.role =='admin')
                   {
-                    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const AdminHomeScreen()));
-                    emit(LoginSuccessState());
+                    await Cache_Helper.saveData(key: 'role', value:'admin').then((value){
+                      Navigator.of(context).pushAndRemoveUntil(
+                          MaterialPageRoute(builder:(context) => const AdminHomeScreen()), (route) => false);
+                      emit(LoginSuccessState());
+                    }).catchError((error){print(error);});
+
                   }
           });
         });
@@ -142,17 +149,18 @@ class LoginCubit extends Cubit<LoginStates> {
   Future<void> signOut()  async {
     FirebaseAuth.instance.signOut().
     then((value) async{
-      await Cache_Helper.removeData(key: 'uid').then((value) {
+      await Cache_Helper.removeAllData().then((value) {
         userId=null;
+        role=null;
         decideNavBar(1);
         emit(SignOutSuccessState());
       }).catchError((error)
       {print('error on cache helper');
         print(error);
-        emit(SignOutSuccessState());});
+        emit(SignOutErrorState());});
     }).catchError((error){
       print(error);
-      emit(SignOutSuccessState());
+      emit(SignOutErrorState());
     });
 
 

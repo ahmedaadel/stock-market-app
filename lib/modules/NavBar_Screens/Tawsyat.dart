@@ -112,7 +112,7 @@ Widget newsBuilder() => Padding(
         ],
       ),
     );
-Widget newsBuilder2(Stock stock,context,){
+Widget newsBuilder2(Stock stock,context){
   return   Container(
     decoration: BoxDecoration(
       borderRadius: BorderRadius.circular(12)
