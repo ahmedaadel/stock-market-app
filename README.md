@@ -1,16 +1,19 @@
-# borsetak
+# AllianzSA
 
 A new Flutter project.
 
-## Getting Started
+## Description
 
-This project is a starting point for a Flutter application.
+- Allianz is an app for a startup whose business related to stock market and its main idea is to analyse the stock market (saudi stock market specefically)
+  
+-  the company makes recommendations for its own customers , so the company wanted to make sure these recommendations reach the customer as fast as possible and   
+   wanted to ease the operation of telling the customer the recommendations
+  
+- the app has an admin dashboard where admin can
+  • send stock recommendation to subscribed users (Send notifications using Firebase Cloud Messaging )
+  • move old recommendations to "History of recommendations " page where the normal user (non-subscribed) can view
+  • add stockmarket news and send it to all the users of the app 
+  • delete old news from database (firestore)
+  • create subscribed user email with username and password which user can access with it the recommendations page (done using firebase and firestore)
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
